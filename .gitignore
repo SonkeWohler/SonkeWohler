@@ -1,0 +1,24 @@
+### --- TeX
+
+#-- Don't need compiled files.
+*.pdf
+
+#-- or compile related files
+*.aux
+*.out
+
+### --- System and Automation
+
+#-- Temporary Files
+*.sw[a-z]
+*~
+
+#-- package
+*.tar
+*.gz
+*.rar
+*.7z
+*.zip
+
+#-- logging
+*.log
