@@ -1,4 +1,8 @@
-### Hi there 👋
+# Hello World out there!
+
+My name is Sönke Wöhler.  I have been writing Java since high school - almost
+exclusively for school and professionally - but lately I have become more
+enthusiastic about Rust, FOSS and all things Linux.
 
 <!--
 **SonkeWohler/SonkeWohler** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
