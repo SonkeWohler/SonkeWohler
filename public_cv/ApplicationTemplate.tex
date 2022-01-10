@@ -1,0 +1,400 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This document was inspired by a Template by Akash Benerjee: https://www.overleaf.com/articles/akash-banerjees-cv/qcxhvqqybqrq
+% Feel free to distribute this template, but please keep the
+% referral to HowToTeX.com.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+
+%%% Packages
+%%% ------------------------------------------------------------
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{sectsty}
+\usepackage{enumitem}
+\usepackage{combelow}
+
+%%% characters
+%%% ------------------------------------------------------------
+% from https://tex.stackexchange.com/questions/118080/babel-romanian-or-c
+% romanian letters that have diacritics
+
+\useshorthands{`}
+
+\defineshorthand{`s}{\cb{s}}
+\defineshorthand{`S}{\cb{S}}
+\defineshorthand{`t}{\cb{t}}
+\defineshorthand{`T}{\cb{T}}
+
+%%% Options
+%%% ------------------------------------------------------------
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+\textheight=700px                    % Saving trees ;-)
+\renewcommand\labelitemi{$\diamond$}   % different bullets for lists
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+
+\sectionfont{%                  % Change font of \section command
+  \usefont{OT1}{phv}{b}{n}%    % bch-b-n: CharterBT-Bold font
+  \sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros for the Layout
+%%% ------------------------------------------------------------
+
+  % note that there will be macros defined inside the document as well. The
+  % rule here is that anything I frequently adjusts goes in the document
+  % (colors, cv updates, adaptations) while everything more permanent stays
+  % here outside the document (the general layout)
+
+%%% general macros
+
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}      % Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}    % Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+  \Huge \hfill \textbf{#1}\par 
+  \hrulefill
+  \normalsize \normalfont}
+
+\newcommand{\MyAddress}[3]{ % Slogan (optional)
+  \par \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+  \par \usefont{OT1}{phv}{m}{n}\hfill \textit{#2}
+  \par \usefont{OT1}{phv}{m}{n}\hfill \textit{#3}
+  \par \normalfont}
+
+%%% specific to the CV
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+    \Huge \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+    \par \normalsize \normalfont}
+
+    \newcommand{\NewPart}[1]{\section*{\uppercase{{#1}}}}
+
+\newcommand{\PersonalEntry}[2]{
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{        % Box to align text
+    \textit{#1}}           % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{        % Box to align text
+    \textit{#1}}         % Entry name (birth, address, etc.)
+    \hspace{1.5em} \parbox{6\spacebox}{#2} \par}    % Entry value  
+    
+\newcommand{\EducationEntry}[4]{
+  \noindent \textbf{#1} \hfill      % Study
+    \colorbox{Black}{%
+      \parbox{6em}{%
+      \hfill\color{White}#2}} \par  % Duration
+      \noindent \textit{#3} \par        % School
+      \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
+
+\newcommand{\WorkEntry}[4]{          % Same as \EducationEntry
+  \noindent \textbf{#1} \hfill      % Jobname
+  \colorbox{Black}{\color{White}#2} \par  % Duration
+  \noindent \textit{#3} \par              % Company
+  \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+  \normalsize \par}
+
+%%% Document
+%%% ------------------------------------------------------------
+\begin{document}
+
+% Colours
+% ------------------------------------------------------------
+
+  \definecolor{headerColor}{HTML}{6e0078}
+  \definecolor{titleColor}{HTML}{2f2154}
+
+% Titles
+% ------------------------------------------------------------
+
+  \newcommand{\StylisedName}{
+    \MyName{ \textcolor{headerColor}{S\"onke W\"ohler} }
+  }
+  \newcommand{\MyDate}{
+    \footnotesize Cri`sana 10.01.2022 \normalsize \\
+  }
+  \newcommand{\SameAddress}{
+    \MyAddress
+      { \textcolor{titleColor}{ Somewhere in Romania }}
+      { \textcolor{titleColor}{ +40 123 456 789 \hspace{5pt} \href{mailto:nobody@gmail.com}{nospam@nowhere.xyz} }}
+      { \textcolor{titleColor}{ 7 Mai 1996 }}
+  }
+
+  \newcommand{\CoverAddress}{
+    \footnotesize \SameAddress
+    \normalsize
+  }
+
+% Cover Letter
+% ------------------------------------------------------------
+
+  \StylisedName
+  \CoverAddress
+
+  \sepspace %\sepspace
+  
+  \noindent
+  Dear People who found my Application Templates,  \\
+  Dear Recruiters, curious Colleagues and random Strangers on the Internet,
+  
+%%% Statement
+%%% ------------------------------------------------------------
+  \sepspace 
+
+  \noindent  You might not have posted a job offer, but if You are reading this
+  anyway You could probably use somebody on Your team who loves to make
+  complicated things simple and knows their way around a codebase - or more
+  importantly the pipelines and people surrounding it.
+
+  \sepspace
+  
+  \noindent  While my understanding of software development has been centered
+  around Java and its OOP approach since High-school I quickly realised that it
+  is the workflow around the code that really sets me apart. In my very first
+  project - the iHP - it was difficult for the stake holders with backgrounds
+  in hydrocarbon engineering and business to communicate their requirements to
+  our team of developers.  Despite having no knowledge of the field myself, my
+  study of physics allowed me to build on some common ground with the petroleum
+  engineers and hence gave me a better grasp of the project requirements. When
+  communicating this understanding within the team it often came naturally that
+  I documented design decisions made by the team to then communicate these to
+  management and stakeholders.  As such my role as a communicator within and
+  without the team was likely my most notable impact which I have carried on in
+  all my projects thus far.
+
+  \sepspace
+
+  \noindent  This people and pipeline work is what I am most proud of.  Anybody
+  can learn how to code and picking up new languages shouldn't be a large
+  undertaking to a skilled developer, but to understand the way useful ideas
+  are hatched and what can be done to help them along is what I am offering.  A
+  talent for turning business information into business logic across
+  backgrounds, application layers and cultures.  It is at this point that I
+  would normally talk about what I hope to get out of employment with You,
+  which is difficult to formulate as a template.  My main motivation is that I
+  found myself in this country for personal reasons and I would like to stay
+  here.  In the time it takes me to learn the language properly and integrate I
+  would also like to continue developing professionally.  The more I get to
+  learn, the more new industries and work-cultures I am exposed to the happier
+  I will be.
+
+  \sepspace
+  
+  \noindent  If You have use for somebody who knows their way around software
+  but who doesn't want to stand still while integrating in a new country, I
+  think You will be impressed by me - and not just by the amount of time I can
+  spend talking about my Linux setup.
+
+  \sepspace
+
+  \sepspace
+
+  \noindent
+  Looking forward to hearing from You.
+
+  \sepspace
+
+  \includegraphics[height=0.78cm]{signature}\hspace{2.5cm}
+  \hfill
+  \MyDate
+  \vspace{5pt}
+  S\"onke W\"ohler  \\
+
+  \vfill
+  \footnotesize
+  \textbf{\underline{What would be attached if You received this as an Application}}
+  \begin{itemize}[noitemsep,topsep=0pt]
+    \item Curriculum Vitae
+    \item Work Transcript from the University of Aberdeen (2018-2021)
+    \item BSc Diploma and Transcript from the University of Aberdeen
+    \item Abitur (High school) Diploma, Transcript and Certificate of Valedictorian-ship
+  \end{itemize}
+
+  % Curriculum Vitae
+  % ------------------------------------------------------------
+
+  \StylisedName
+  \SameAddress
+
+\sepspace
+
+\NewPart{Employment History}{}
+
+\WorkEntry{Consultant Software Engineer}{May 2021-July 2021}{Integrating an intelligent
+Hydrate Management System}{With the University of Aberdeen on behalf of Blue
+Gentoo \\
+\hspace{5pt} \footnotesize See
+\textcolor{headerColor}{\url{https://blue-gentoo.com/automated-gas-hydrate-management/}}
+\vspace{5pt}
+\begin{itemize}[noitemsep,topsep=0pt]
+  \item Interoperation with Fortran and C++
+  \item Entirely self-structured
+\end{itemize}
+}
+
+\sepspace
+
+\WorkEntry{Mental Health Year}{May 2020-May 2021}{Going back to the basics with
+vim, bash and Linux}{Focusing on Myself, but for some software related personal progress   \\
+\hspace{5pt} \footnotesize See e.g.
+\textcolor{headerColor}{\url{https://github.com/SonkeWohler/.vim}}  \\
+or 
+\textcolor{headerColor}{\url{https://github.com/SonkeWohler/smallProjectsLibrary}}
+\vspace{5pt}
+\begin{itemize}[noitemsep,topsep=0pt]
+  \item Getting to know GNU/Linux, Vim, Rust
+  \item Restructuring my personal workflow, preferences and philosophy
+  \item Establishing healthy habits for sustainable Mental Health
+\end{itemize}
+}
+
+\sepspace
+
+\WorkEntry{Software Engineer}{Jun 2019-May 2020}{Working towards multiple data
+analysis tools for Oil and Gas}{With HyperDap Ltd. and the University of
+Aberdeen \\
+\hspace{5pt} \footnotesize See
+\textcolor{headerColor}{\url{https://hyperdap.com/index.php/products}}
+\vspace{5pt}
+\begin{itemize}[noitemsep,topsep=0pt]
+  \item Micro-services based Architecture Design
+  \item Java/Maven and NodeJS Back-end
+  \item Web-Based Front-end (Javascript, HTML, CSS, Plotly)
+  \item NoSQL and PostreSQL databases
+  \item Informal Agile environment
+  \item Requirement Elicitation
+\end{itemize}
+}
+
+\sepspace
+
+\WorkEntry{Junior Programmer}{Apr 2018-Apr 2019}{Prototyping an intelligent
+Hydrate Management System}{With the University of Aberdeen on behalf of Blue
+Gentoo \\
+\hspace{5pt} \footnotesize See
+\textcolor{headerColor}{\url{https://blue-gentoo.com/automated-gas-hydrate-management/}}
+\vspace{5pt}
+\begin{itemize}[noitemsep,topsep=0pt]
+  \item Architectural Design Validations
+  \item Java/Maven based implementations
+  \item NoSQL Database
+  \item JavaFX based UI
+\end{itemize}
+}
+
+
+\cleardoublepage
+
+  \StylisedName
+  \SameAddress
+
+\NewPart{Education}{}
+
+\EducationEntry{BSc (Joint Hons) Computing Science and
+Physics}{2015-2019}{University of Aberdeen, Scotland}{
+Graduated Upper-Second (2:1)
+\vspace{5pt}
+\begin{itemize}[noitemsep,topsep=0pt]
+  \item Scientific Programming in Python, MATLAB and Methematica
+  \item Most implementations in Python, some in Java
+  \item Conceptual Computing such as Big O calculations
+\end{itemize}
+}
+
+\sepspace
+
+\EducationEntry{Albert Einstein Gymnasium}{2012-2015}{Ettlingen,
+Germany}{Graduated Valedictorian (1.5)
+\vspace{5pt}
+\begin{itemize}[noitemsep,topsep=0pt]
+  \item Basics like UML, Hardware, Network-logic
+  \item Java, SQL, Assembly
+\end{itemize}
+}
+
+%%\NewPart{Other Skills}
+%%\sepspace
+%%
+%%\SkillsEntry{Software}{\textcolor{titleColor}{Tooling}}
+%%\vspace{5pt}
+%%\SkillsEntry{}{
+%%  \textcolor{headerColor}{
+%%    \begin{itemize}[noitemsep,topsep=0pt]
+%%      \item Git and GitHub with a Focus on Command Line
+%%      \item Maven based Dependency Management and Build Pipeline
+%%      \item GitHub and Trello Project Management Boards (Integrated)
+%%      \item Significant and Growing Bash based Tool Set
+%%    \end{itemize}
+%%} }  \vspace{3pt}
+%%
+%%\SkillsEntry{}{\textcolor{titleColor}{Concepts}}
+%%\vspace{5pt}
+%%\SkillsEntry{}{
+%%  \textcolor{headerColor}{
+%%    \begin{itemize}[noitemsep,topsep=0pt]
+%%      \item Agile Project Planning Cycles
+%%      \item Project Gantt Creation
+%%      \item UML Modelling with a Focus on Sequence, Component and ER Models
+%%      \item Basic Quality Assurance Strategies like Code Review, Unit and Integration Tests
+%%    \end{itemize}
+%%} }  \vspace{3pt}
+%%
+%%\SkillsEntry{Miscellaneous}{\textcolor{titleColor}{Academic}}
+%%\vspace{5pt}
+%%\SkillsEntry{}{
+%%  \textcolor{headerColor}{
+%%    \begin{itemize}[noitemsep,topsep=0pt]
+%%      \item Significant Understanding of Biomedical Concepts and a Fascination with them
+%%      \item Basic Understanding of Scientific Publication Process
+%%      \item Laboratory Experience in Physics
+%%    \end{itemize}
+%%}  }  \vspace{3pt}
+%%
+%%\SkillsEntry{}{\textcolor{titleColor}{Other}}
+%%\vspace{5pt}
+%%\SkillsEntry{}{
+%%  \textcolor{headerColor}{
+%%    \begin{itemize}[noitemsep,topsep=0pt]
+%%      \item Touch Typing
+%%    \end{itemize}
+%%}  }  \vspace{3pt}
+%%
+\NewPart{Languages}
+\sepspace
+
+\SkillsEntry{German}{Native}
+\vspace{5pt}
+\SkillsEntry{English}{C2}
+\vspace{5pt}
+\SkillsEntry{Romanian}{B1}
+
+  \vfill
+
+  \includegraphics[height=0.78cm]{signature}\hspace{2.5cm}
+  \hfill
+  \MyDate
+  S\"onke W\"ohler
+
+  \vspace*{\fill}
+
+%%\vfill \small \centering \rule{\linewidth}{0.4pt} This document was written in
+%%\LaTeX\space from a template by Akash Benerjee, available at
+%%\url{https://www.overleaf.com/articles/akash-banerjees-cv/qcxhvqqybqrq}
+% 
+\end{document}
+
