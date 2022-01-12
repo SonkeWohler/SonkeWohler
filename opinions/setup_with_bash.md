@@ -80,11 +80,6 @@ I will even use [Alpine Linux](https://www.alpinelinux.org/) for some things
 example).  So I need to make my script robust against most package managers out
 there and select the right one at runtime.
 
-There are a few differences between the package managers.  First of all the
-name (`apt`, `apk`, `pacman`, `yum`) but also the commands (`pacman -S` vs `apt
-install`) and then there are update commands (`pacman -Syu` vs `apt update &&
-apt update`).
-
 Now I didn't come up with this myself, I found it [on
 Stackoverflow](https://unix.stackexchange.com/questions/46081/identifying-the-system-package-manager),
 but it works great.  We identify the package manager by the distribution
@@ -108,8 +103,11 @@ do
 done
 ```
 
-Now that we know the package manager we can use other arrays to remember the
-commands for each manager.  Lets start with the updates.
+There are a few differences between the package managers.  First of all the
+name (`apt`, `apk`, `pacman`, `yum`) but also the commands (`pacman -S` vs `apt
+install`) and then there are update commands (`pacman -Syu` vs `apt update &&
+apt update`).  Since we know the package manager we can use other arrays to
+remember the commands for each manager.  Lets start with the updates.
 
 ```
 declare -A packageUpdates;
@@ -342,20 +340,6 @@ ln --symbolic --verbose ~/dotfiles/bashrc ~/.bashrc
 The rest is up to you.  These are your configuration files so it depends on
 what you want to keep configured.
 
-Enjoy!
+## Step six, Enjoy!
 
-
-
-
----
----
----
-
-As I said before, all of this is part of my dotfiles, i.e. a bunch of files
-that configure my Linux machine and that I keep under version control [on
-GitHub](https://github.com/SonkeWohler/.vim).  Setting up a new machine
-finishes with downloading those dotfiles.  But in order to do that I need `git`
-setup.
-
-After installing git it doesn't have a user setup and might refuse to do a few
-things until that is done.
+Enjoy and improve.  Remember that life is a constant work in progress anyway.
