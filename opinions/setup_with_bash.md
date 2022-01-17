@@ -54,9 +54,9 @@ ahead and just slap a list of packages in a file and do something like this:
 curl link.to/your/file >> /home/user/file
 file=/home/user/file
 
-for package in $file; do
+while read package; do
   sudo apt install $package
-done
+done < $file
 ```
 
 And this is where we get our first problem, you can't just use `sudo` in a
@@ -159,9 +159,9 @@ So far so good.  We have the package manager and we have a list of packages to
 install.  Sounds simple right?
 
 ```
-for package in /home/user/package_list; do
+while read package; do
   eval ${packageInstall[manager]} $package
-done
+done < /home/user/package_list
 ```
 
 For many packages this will work - try it with `git`, `neovim`, ` tmux` for
@@ -189,9 +189,9 @@ packageInstall[apt]="apt install"
 packageInstall[apk]="apk add"
 packageInstall[yum]="yum install"
 
-for package in /home/user/package_list; do
+while read package; do
   eval "${packageInstall[manager]} $package"
-done
+done < /home/user/package_list
 ```
 
 ### Package Installation Bonus: FZF
@@ -340,6 +340,8 @@ ln --symbolic --verbose ~/dotfiles/bashrc ~/.bashrc
 The rest is up to you.  These are your configuration files so it depends on
 what you want to keep configured.
 
-## Step six, Enjoy!
+## Step six, Maintenance
 
-Enjoy and improve.  Remember that life is a constant work in progress anyway.
+Now is time to enjoy and improve.  Remember that life is a constant work in
+progress anyway, and so will your dotfiles be.  You know where to add new
+software to your list.  You should know how your version control works.
