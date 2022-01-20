@@ -26,3 +26,5 @@ If I don't know how to do it on command line I don't really understand it proper
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sonke-wohler-54657a145/)
 [![Stack Overflow](https://img.shields.io/badge/Stack_Overflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/11151695/sonke-wo)
+
+I have a template CV and cover letter as pdf [here](https://github.com/SonkeWohler/SonkeWohler/releases/tag/cv1.0.0).
