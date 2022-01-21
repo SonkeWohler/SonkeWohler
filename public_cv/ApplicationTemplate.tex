@@ -116,6 +116,13 @@
 % Colours
 % ------------------------------------------------------------
 
+  % something subtle I like to do is to adapt the colours to the
+  % application. Simply using the company colours usually, though since the
+  % recruiters are probably used to looking at their own website etc I am not
+  % sure how well that pops as compared to using my own colour-scheme.
+  %
+  % If you try that make it very subtle and almost unnoticeable.  The point is
+  % not for recruiters to notice but to feel familiar in a way they don't notice.
   \definecolor{headerColor}{HTML}{6e0078}
   \definecolor{titleColor}{HTML}{2f2154}
 
@@ -123,10 +130,14 @@
 % ------------------------------------------------------------
 
   \newcommand{\StylisedName}{
-    \MyName{ \textcolor{headerColor}{S\"onke W\"ohler} }
+    \MyName{
+          \href{https://www.linkedin.com/in/sonke-wohler-54657a145/}
+      { \textcolor{headerColor}{S\"onke W\"ohler} }
+    }
   }
+
   \newcommand{\MyDate}{
-    \footnotesize Cri`sana 10.01.2022 \normalsize \\
+    \footnotesize Cri`sana 21.01.2022 \normalsize \\
   }
   \newcommand{\SameAddress}{
     \MyAddress
@@ -235,6 +246,23 @@
 
 \NewPart{Employment History}{}
 
+\WorkEntry{Sabbatical}{May 2020-May 2021 | August-November}{Focusing on
+  Myself and Mental Health}{Going back to the basics regarding software \\
+  \hspace{5pt}
+  \footnotesize See
+  e.g. \textcolor{headerColor}{\url{https://github.com/SonkeWohler/.vim}}  \\
+  or
+  \textcolor{headerColor}{\url{https://github.com/SonkeWohler/smallProjectsLibrary}}
+  \vspace{5pt}
+  \begin{itemize}[noitemsep,topsep=0pt]
+    \item Getting to know GNU/Linux, Bash, Vim, Rust
+    \item Establishing healthy habits for sustainable Mental Health
+    \item Restructuring my personal workflow, preferences and philosophy
+  \end{itemize}
+}
+
+\sepspace
+
 \WorkEntry{Consultant Software Engineer}{May 2021-July 2021}{Integrating an intelligent
 Hydrate Management System}{With the University of Aberdeen on behalf of Blue
 Gentoo \\
@@ -244,22 +272,6 @@ Gentoo \\
 \begin{itemize}[noitemsep,topsep=0pt]
   \item Interoperation with Fortran and C++
   \item Entirely self-structured
-\end{itemize}
-}
-
-\sepspace
-
-\WorkEntry{Mental Health Year}{May 2020-May 2021}{Going back to the basics with
-vim, bash and Linux}{Focusing on Myself, but for some software related personal progress   \\
-\hspace{5pt} \footnotesize See e.g.
-\textcolor{headerColor}{\url{https://github.com/SonkeWohler/.vim}}  \\
-or 
-\textcolor{headerColor}{\url{https://github.com/SonkeWohler/smallProjectsLibrary}}
-\vspace{5pt}
-\begin{itemize}[noitemsep,topsep=0pt]
-  \item Getting to know GNU/Linux, Vim, Rust
-  \item Restructuring my personal workflow, preferences and philosophy
-  \item Establishing healthy habits for sustainable Mental Health
 \end{itemize}
 }
 
